@@ -5,68 +5,10 @@
 .container {
 	@include clearfix;
 	background: #fff;
-}
-
-.section {
-	padding: 40px;
-	color: darken($color-primary-dark, 10	);
-}
-
-.master-section {
-
-	padding: 12px 0;
-
-	>.section {
-		width: 80%;
-		margin: 0 auto;
-		padding: 15px;
-		box-sizing: border-box;
-	}
-
-	&--muted {
-		background: $color-gray;
-	}
-
-	@extend clearfix;
+	padding: 40px 0;
 }
 
 
-.section {
-	padding: 0;
-	width: 100%;
-	box-sizing: border-box;
-
-	&--testimonials {
-		margin-left: -15px;
-	}
-}
-
-.clearfixed {
-	@extend %clearfix;
-}
-
-.row--centered {
-	margin: 0 auto;
-	width: 80%;
-
-}
-
-.text-muted {
-	font-weight: 700;
-}
-
-.subtitle {
-	text-transform: uppercase;
-	font-size: 15px;
-	margin-bottom: 10px;
-	font-weight: 700;
-
-	color: #000;
-}
-
-.info {
-	font-size: 13px;
-}
 
 #mobile-indicator {
 	display: none;

@@ -1,4 +1,4 @@
-.button{
+.button--bislite{
 	@extend %button;
 	@include bislite-button-theme( $color-primary );
 

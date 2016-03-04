@@ -24,8 +24,8 @@ var config = {
     src : {
         html    : './src/*.html',
         jade    : './src/*.jade',
-        styles  : './src/css/**/*.{sass,scss}',
-        scripts : './src/js/*.js',
+        styles  : './src/styles/**/*.{sass,scss}',
+        scripts : './src/scripts/*.js',
         images  : './src/images/**/*.*',
         vendor  : './src/vendor/**/*'
     },
@@ -48,7 +48,7 @@ var config = {
 
 /* Scripts */
 gulp.task( 'scripts', function() {
-    browserify('./src/js/functions.js')
+    browserify('./src/scripts/main.js')
         .bundle()
         .pipe(source('main.js'))
         .pipe(gulp.dest(config.dest.js))
@@ -57,7 +57,7 @@ gulp.task( 'scripts', function() {
 
 /* Styles */
 gulp.task( 'styles', function() {
-    gulp.src( './src/css/style.sass' )
+    gulp.src( './src/styles/main.sass' )
         /*.pipe(sourcemaps.init())*/
             .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         /*.pipe(sourcemaps.write(config.dest.maps))*/
