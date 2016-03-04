@@ -1,15 +1,75 @@
 // Hamburger Icons Component Styles
 // by @jhe_xo
 
+$button-width: 96px
+$button-height: 96px
+$bar-thickness: 8px
+$button-pad: 18px
+$button-bar-space: 12px
+$button-transition-duration: 0.3s
+
 // First some resets and starting config
+.section--buttons
+	.title
+		margin-bottom: .65em
+
+.buttons
+	margin: 1.5rem 0 0
+
+.button
+	&__info
+		display: inline-block
+		vertical-align: top
+		line-height: 56px
+		padding-left: 20px
+		background: $color-light
+		transition: 0.3s ease-in-out
+
+		.subtitle
+			margin-bottom: 0.83em
+
+.button-wrapper
+	&:nth-child(1)
+		.button__info
+			color: $button-blue
+
+	&:nth-child(2)
+		.button__info
+			color: $button-pink
+
+	&:nth-child(3)
+		.button__info
+			color: $button-green
+
+	&:nth-child(4)
+		.button__info
+			color: $button-orange
+
+	&:hover
+		&:nth-child(1)
+			.button__info
+				color: darken($button-blue, 15)
+
+		&:nth-child(2)
+			.button__info
+				color: darken($button-pink, 15)
+
+		&:nth-child(3)
+			.button__info
+				color: darken($button-green, 15)
+
+		&:nth-child(4)
+			.button__info
+				color: darken($button-orange, 15)
+
 .c-hamburger
-	display: block
+
 	position: relative
 	overflow: hidden
 	margin: 0 0 10px
 	padding: 0
-	width: 96px
-	height: 96px
+	width: $button-width
+	height: $button-height
 	font-size: 0
 	text-indent: -9999px
 	appearance: none
@@ -26,9 +86,9 @@
 		display: block
 		position: absolute
 		top: 44px
-		left: 18px
-		right: 18px
-		height: 8px
+		left: $button-pad
+		right: $button-pad
+		height: $bar-thickness
 		background: white
 
 		&::before,
@@ -37,7 +97,7 @@
 			display: block
 			left: 0
 			width: 100%
-			height: 8px
+			height: $bar-thickness
 			background-color: #fff
 			content: ""
 
@@ -53,7 +113,7 @@
 		background-color: #28aadc
 
 		span
-			transition: transform 0.3s
+			transition: transform $button-transition-duration
 
 		&.is-active
 			background-color: #166888
@@ -66,7 +126,7 @@
 		background-color: #ff3264
 
 		span
-			transition: background 0s 0.3s
+			transition: background 0s $button-transition-duration
 
 			&::before,
 			&::after
@@ -95,4 +155,71 @@
 				&::before,
 				&::after
 					transition-delay: 0s, 0.3s
+
+	// Third Element - The Left Row Animaiton
+	&--htla
+		background-color: #32dc64
+
+		span
+			transition: transform $button-transition-duration
+
+			&::before
+				transform-origin: top right
+				transition: transform 0.3s, width 0.3s, top 0.3s
+
+			&::after
+				transform-origin: bottom right
+				transition: transform 0.3s, width 0.3s, bottom 0.3s
+
+		&.is-active
+			background-color: darken(#32dc64, 20)
+
+			span
+				transform: rotate(180deg)
+
+				&::before,
+				&::after
+					width: 50%
+
+				&::before
+					top: 0
+					transform: translateX(38px) translateY(4px) rotate(45deg)
+
+				&::after
+					bottom: 0
+					transform: translateX(38px) translateY(-4px) rotate(-45deg)
+
+	// Fourth Element - The Right Row Animation
+	&--htra
+		background-color: #ff9650
+
+		span
+			transition: transform $button-transition-duration
+
+			&::before
+				transform-origin: top left
+				transition: transform 0.3s, width 0.3s, top 0.3s
+
+			&::after
+				transform-origin: bottom left
+				transition: transform 0.3s, width 0.3s, bottom 0.3s
+
+		&.is-active
+			background-color: #e95d00
+
+			span
+				transform: rotate(180deg)
+
+				&::before,
+				&::after
+					width: 50%
+
+				&::before
+					top: 0
+					transform: translateX(-8px) translateY(4px) rotate(-45deg)
+
+				&::after
+					bottom: 0
+					transform: translateX(-8px) translateY(-4px) rotate(45deg)
+
 

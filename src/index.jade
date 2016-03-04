@@ -12,20 +12,32 @@ html(lang="en")
   body
 
     main.container
-      .grid
-        .col.col--8-of-12.col--centered.buttons-wrapper
+      .grid.section.section--buttons
+        .col.col--8-of-12.col--centered
+          h1.title Menu Hamburger Animations
+          p.info Clique em cada botão para alterar seu estado e ativar a animação.
 
-          button.button.c-hamburger.c-hamburger--rot
-            span toggle menu
-
-          button.button.c-hamburger.c-hamburger--htx
-            span toggle menu
-
-          button.button.c-hamburger.c-hamburger--htla
-            span toggle menu
-
-          button.button.c-hamburger.c-hamburger--htra
-            span toggle menu
+          .buttons
+            .button-wrapper
+              button.button.c-hamburger.c-hamburger--rot
+                span toggle menu
+              .button__info.col--6-of-12
+                h2.subtitle Rotate Burger Animation
+            .button-wrapper
+              button.button.c-hamburger.c-hamburger--htx
+                span toggle menu
+              .button__info.col--6-of-12
+                h2.subtitle X Transform Animation
+            .button-wrapper
+              button.button.c-hamburger.c-hamburger--htla
+                span toggle menu
+              .button__info.col--6-of-12
+                h2.subtitle Left Arrow Animation
+            .button-wrapper
+              button.button.c-hamburger.c-hamburger--htra
+                span toggle menu
+              .button__info.col--6-of-12
+                h2.subtitle Right Arrow Animation
 
 
 

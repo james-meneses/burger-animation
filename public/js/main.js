@@ -2,23 +2,21 @@
 (function(){
 	'use strict'
 
-	var buttons = document.querySelectorAll('.c-hamburger')
-	console.log('bt', buttons)
+	var toggles = document.querySelectorAll('.c-hamburger')
 
-	// forEach method, could be shipped as part of an Object Literal/Module
-	var forEach = function (array, callback, scope) {
-	  for (var i = 0; i < array.length; i++) {
-	    callback.call(scope, i, array[i]) // passes back stuff we need
-	  }
+	for (var i = toggles.length - 1; i>= 0; i--) {
+		var toggle = toggles[i]
+		toggleHandler(toggle)
+	}
+
+	function toggleHandler(toggle) {
+		toggle.addEventListener( 'click', function(e) {
+			e.preventDefault();
+			(this.classList.contains('is-active') === true) ? this.classList.remove('is-active') : this.classList.add('is-active')
+		})
 	}
 
 
-	forEach(buttons, function(idx, el){
-		console.log('el', el)
-		el.addEventListener('click', function(ev){
-			this.classList.toggle('is-active')
-		})
-	})
 
 }) ();
 
