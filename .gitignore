@@ -38,10 +38,7 @@ $RECYCLE.BIN/
 
 ## Destination folder
 public
+src
 
-src/fonts
-src/vendor
-
-src/index.html
 .bowerrc
 bower.json
