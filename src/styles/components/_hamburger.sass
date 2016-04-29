@@ -126,17 +126,25 @@ $button-transition-duration: 0.3s
 		background-color: #ff3264
 
 		span
-			transition: background 0s $button-transition-duration
+			transition: $button-transition-duration
 
 			&::before,
 			&::after
+				transform: rotate(0deg)
 				transition-duration: 0.3s, 0.3s
+				-moz-transition-duration: 0.3s, 0.3s
 				transition-delay: 0.3s, 0s
+				-moz-transition-delay: 0.3s, 0s
 
 			&::before
 				transition-property: top, transform
+				transition-property: top, -webkit-transform
+				-moz-transition-property: top, transform
+
 			&::after
 				transition-property: bottom, transform
+				transition-property: bottom, -webkit-transform
+				-moz-transition-property: bottom, transform
 
 		&.is-active
 			background-color: #cb0032

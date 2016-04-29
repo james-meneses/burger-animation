@@ -2,8 +2,6 @@
 // A partial implementation of the Ruby list functions from Compass:
 // https://github.com/Compass/compass/blob/stable/lib/compass/sass_extensions/functions/lists.rb
 //
-
-
 // compact is part of libsass
 
 @function -compass-nth($list, $place) {
@@ -77,14 +75,12 @@
   @return nth($list, 1);
 }
 
-@if not(function-exists(compact)) {
-  @function compact($vars...) {
-    $list: ();
-    @each $var in $vars {
-        @if $var {
-            $list: append($list, $var, comma);
-        }
-    }
-    @return $list;
+@function compact($vars...) {
+  $list: ();
+  @each $var in $vars {
+      @if $var {
+          $list: append($list, $var, comma);
+      }
   }
+  @return $list;
 }

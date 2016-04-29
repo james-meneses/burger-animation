@@ -37,7 +37,11 @@ Desktop.ini
 $RECYCLE.BIN/
 
 ## Destination folder
-dest
-layouts/images
-layouts/edit
-src/assets/images/images
+public
+
+src/fonts
+src/vendor
+
+src/index.html
+.bowerrc
+bower.json
